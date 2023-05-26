@@ -11,14 +11,14 @@
         saltarLinea();
 }
 
-var numeroPensado = 5;
+var numeroPensado = Math.round(Math.random()*10);
 var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0-10"));
 
 if (numeroPensado==numeroLanzado){
     imprimir("Usted acertó");
 }
 
-if (numeroPensado!=numeroLanzado){
+else{
     imprimir("Usted erró, el número pensado era " + numeroPensado);
 }
 </script>
