@@ -9,16 +9,42 @@
     function imprimir (frase){
         document.write(frase);
         saltarLinea();
-}
+    }
 
-var numeroPensado = Math.round(Math.random()*10);
-var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0-10"));
+    function sorteo (n){
+        return Math.round(Math.random()*n)
+    }
 
-if (numeroPensado==numeroLanzado){
-    imprimir("Usted acertó");
-}
+    var numeroPensado = sorteo(10);
+    var intentos = 3;
+    var contador = 1;
 
-else{
-    imprimir("Usted erró, el número pensado era " + numeroPensado);
-}
+    while (contador <= intentos){
+
+        var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0-10"));
+
+        if (numeroPensado==numeroLanzado){
+            alert("Usted acertó, en el intento " + intentos + ", el numero pensado era: " + numeroPensado);
+            break;
+        }
+
+        else{
+            alert("Usted erró");
+        }
+
+        contador++;
+    }
+
+    //mensaje despues de terminar los intentos
+    if (numeroPensado==numeroLanzado){
+        imprimir("Usted acertó en el intento " + intentos + ", el numero pensado era " + numeroPensado );
+    }
+    else {
+        imprimir("Usted erró, el numero pensado era " + numeroPensado);
+    }
+
+
+
+    imprimir("FIN");
+
 </script>
